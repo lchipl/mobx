@@ -1,1 +1,3 @@
-React Redux Redux Saga Axios
+- Установите зависимости: `yarn install` или `npm install`
+- Перейдите в нужную ветку соответствующую уроку: `git checkout lesson_01` или `git checkout lesson_02` и т.д.
+- Запустите проект: `yarn start` или `npm start`
