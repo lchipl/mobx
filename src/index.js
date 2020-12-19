@@ -4,6 +4,7 @@ import './index.css';
 import DevTools from 'mobx-react-devtools';
 import { observer } from 'mobx-react';
 import {appState} from './store/store';
+import {App} from './App';
 
  const Counter =   observer(({store:{count, inc, dec}}) => {
 
@@ -12,13 +13,11 @@ import {appState} from './store/store';
     return (
       <div className="App">
         <DevTools />
-        <h1>{count}</h1>
-        <button onClick={dec}>-1</button>
-        <button onClick={inc}>+1</button>
+        <App />
       </div>
     );
   
 })
 
-ReactDOM.render(<Counter store={appState} />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 
