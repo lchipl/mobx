@@ -1,23 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import DevTools from 'mobx-react-devtools';
-import { observer } from 'mobx-react';
-import {appState} from './store/store';
-import {App} from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
 
- const Counter =   observer(({store:{count, inc, dec}}) => {
+import { App } from "./App";
 
-  
-  
-    return (
-      <div className="App">
-        <DevTools />
-        <App />
-      </div>
-    );
-  
-})
-
-ReactDOM.render(<App />, document.getElementById('root'));
-
+ReactDOM.render(<App />, document.getElementById("root"));

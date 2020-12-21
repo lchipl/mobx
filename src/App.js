@@ -1,7 +1,5 @@
-import React from 'react';
+import React from "react";
 
-export const App = () =>{
-    return(
-        <p>Прилога</p>
-    )
-}
+export const App = () => {
+  return <h1>Пробуем</h1>;
+};
