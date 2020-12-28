@@ -1,11 +1,11 @@
-import { observable, action } from 'mobx';
+import { observable, action } from "mobx";
 
-
-export const appState = observable({
-    count: 0,
-    inc:action(function(){
-      appState.count++}),
-    dec:action(function(){
-      appState.count--
-    })
-  });
+export const stateCounter = observable({
+  count: 0,
+  inc: action(function () {
+    stateCounter.count++;
+  }),
+  dec: action(function () {
+    stateCounter.count--;
+  }),
+});
