@@ -27,7 +27,17 @@ export const App = observer(() => {
         "https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD"
       )
       .then(({ data }) => {
-        const coins = data.Data;
+        console.log("data", data);
+        const coins = data.Data.map((coin) => {
+          const obj = {
+            name: coin.CoinInfo.Name,
+            fullName: coin.CoinInfo.FullName,
+            imageURL: `https://www.cryptocompare.com${coin.CoinInfo.ImageUrl}`,
+            price: coin.DISPLAY.USD.PRICE,
+            volue24hour: coin.RAW.USD.CHANGE24HOUR,
+          };
+          return obj;
+        });
         setCoins(coins);
       });
   }, []);

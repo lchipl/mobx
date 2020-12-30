@@ -30,6 +30,11 @@ const useStyles = makeStyles({
   table: {
     minWidth: 700,
   },
+  icon: {
+    width: 22,
+    height: 22,
+    borderRadius: 30,
+  },
 });
 
 export const TableKripto = ({ Allcoins }) => {
@@ -40,23 +45,25 @@ export const TableKripto = ({ Allcoins }) => {
       <Table className={classes.table} aria-label="customized table">
         <TableHead>
           <TableRow>
+            <StyledTableCell align="left">Icon</StyledTableCell>
             <StyledTableCell align="left">Name</StyledTableCell>
-            <StyledTableCell align="left">Short Name</StyledTableCell>
-            <StyledTableCell align="left">Value</StyledTableCell>
+            <StyledTableCell align="left">Short Name </StyledTableCell>
+            <StyledTableCell align="left">Value </StyledTableCell>
             <StyledTableCell align="left">Value 24h</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {Allcoins.map(({ CoinInfo, DISPLAY: { USD } }) => (
+          {Allcoins.map((Coin) => (
             <StyledTableRow>
               <StyledTableCell component="th" scope="row">
-                {CoinInfo.FullName}
+                <img className={classes.icon} src={Coin.imageURL} />
               </StyledTableCell>
-              <StyledTableCell align="left">
-                {CoinInfo.Internal}
+              <StyledTableCell component="th" scope="row">
+                {Coin.fullName}
               </StyledTableCell>
-              <StyledTableCell align="left">{USD.PRICE}</StyledTableCell>
-              <StyledTableCell align="left"></StyledTableCell>
+              <StyledTableCell align="left">{Coin.name}</StyledTableCell>
+              <StyledTableCell align="left">{Coin.price}</StyledTableCell>
+              <StyledTableCell align="left">{Coin.volue24hour}</StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>
