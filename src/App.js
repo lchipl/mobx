@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Container, Grid, Paper } from "@material-ui/core";
 import { observer } from "mobx-react";
 import { TableKripto } from "./components/TableKripto/tableKripto";
+import { ConvertForm } from "./components/ConvertForm/convertForm";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -51,7 +52,9 @@ export const App = observer(() => {
           </Paper>
         </Grid>
         <Grid item xs={4}>
-          <Paper>xs=6</Paper>
+          <Paper>
+            <ConvertForm />
+          </Paper>
         </Grid>
       </Grid>
     </Container>
